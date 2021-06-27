@@ -1,14 +1,11 @@
 package utility;
 
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.remote.MobileCapabilityType;
-import io.cucumber.java.After;
-import org.junit.Before;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
-import java.net.MalformedURLException;
 
 public class CucumberHook {
     private static AppiumDriver driver;
