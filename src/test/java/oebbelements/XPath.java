@@ -8,4 +8,7 @@ public class XPath {
     public static final String WEITER_ANGEBOTE = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.RelativeLayout[2]";
     public static final String EINFACH_RAUS_TICKET = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.FrameLayout[2]/android.widget.RelativeLayout/androidx.recyclerview.widget.RecyclerView/android.widget.RelativeLayout[1]";
 
+    public static final String WEB_FIRST_DESTINATION_OPTION = "/html/body/ui-view/div/div/div/div/relation-input-wrapper/relation-input/form/div/div[1]/relation-station/autosuggest/div/div[3]/button";
+    public static final String WEB_TICKET_SHOW_ALL = "/html/body/ui-view/div/div/div/div/div/app-start-container/section/div[2]/travel-action-listing/div/div[2]/travel-action[1]/button";
+    public static final String WEB_TICKET_LIST_ITEM = "/html/body/ui-view/root-content/router-outlet-wrapper/app-ticket-shop-main/div/div/div/div/timetable-container/div/div/timetable-connection[1]";
 }
