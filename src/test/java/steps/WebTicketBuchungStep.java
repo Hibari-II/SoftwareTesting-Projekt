@@ -64,6 +64,7 @@ public class WebTicketBuchungStep {
     public void ticketpriceShouldBe(String price) throws Exception {
         var result = webDriver.findElements(By.xpath(XPath.WEB_TICKET_EINFACH_RAUS_PRICE));
         Assert.assertNotNull("Erwartet, dass mindestens ein ergebniss gefunden wird.", result);
+        //todo: magic string?
         Assert.assertEquals("€ 35,00",result);
     }
 }
