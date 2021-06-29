@@ -11,6 +11,6 @@ public class XPath {
     public static final String WEB_FIRST_DESTINATION_OPTION = "/html/body/ui-view/div/div/div/div/relation-input-wrapper/relation-input/form/div/div[1]/relation-station/autosuggest/div/div[3]/button";
     public static final String WEB_TICKET_SHOW_ALL = "/html/body/ui-view/div/div/div/div/div/app-start-container/section/div[2]/travel-action-listing/div/div[2]/travel-action[1]/button";
     public static final String WEB_TICKET_LIST_ITEM = "/html/body/ui-view/root-content/router-outlet-wrapper/app-ticket-shop-main/div/div/div/div/timetable-container/div/div/timetable-connection[1]";
-    public static final String WEB_TICKET_EINFACH_RAUS = "/html/body/ui-view/div/div/div/div/div/app-start-container/section/div[2]/travel-action-listing/div/div[2]/travel-action[2]/button/div";
+    public static final String WEB_TICKET_EINFACH_RAUS = "/html/body/ui-view/div/div/div/div/div/app-start-container/section/div[2]/travel-action-listing/div/div[2]/travel-action[1]/button/div";
     public static final String WEB_TICKET_EINFACH_RAUS_PRICE = "/html/body/ui-view/root-content/router-outlet-wrapper/app-ticket-shop-main/div/div/relation-input-wrapper/relation-input/form/div/div[1]/conversion-button/div/div[2]/div/p[1]";
 }

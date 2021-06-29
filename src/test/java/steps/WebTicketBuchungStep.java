@@ -48,22 +48,10 @@ public class WebTicketBuchungStep {
     }
 
     @When("I click on Einfach-Raus")
-    public void clickOnEinfachRaus(DataTable table) throws Exception {
-        List<Map<String, String>> rows = table.asMaps(String.class, String.class);
-        Map<String, String> columns = rows.get(0);
-//        webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        Thread.sleep(10000);
+    public void clickOnEinfachRaus() throws Exception {
+        webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         var fromElem = this.webDriver.findElement(By.xpath(XPath.WEB_TICKET_EINFACH_RAUS));
         fromElem.click();
-//        fromElem.sendKeys(columns.get(MAP_FROM_KEY));
-//        fromElem.sendKeys(Keys.ENTER);
-//        var toElem = this.webDriver.findElement(By.cssSelector("input[name='stationTo']"));
-//        toElem.click();
-//        toElem.sendKeys(columns.get(MAP_TO_KEY));
-//        webDriver.findElement(By.xpath(XPath.WEB_FIRST_DESTINATION_OPTION)).click();
-//
-//        webDriver.findElement(By.xpath(XPath.WEB_TICKET_SHOW_ALL)).click();
-
     }
 
     @Then("the Ticket price is")
@@ -76,6 +64,6 @@ public class WebTicketBuchungStep {
     public void ticketpriceShouldBe(String price) throws Exception {
         var result = webDriver.findElements(By.xpath(XPath.WEB_TICKET_EINFACH_RAUS_PRICE));
         Assert.assertNotNull("Erwartet, dass mindestens ein ergebniss gefunden wird.", result);
+        Assert.assertEquals("€ 35,00",result);
     }
-
 }
