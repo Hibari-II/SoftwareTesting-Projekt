@@ -12,5 +12,11 @@ public class XPath {
     public static final String WEB_TICKET_SHOW_ALL = "/html/body/ui-view/div/div/div/div/div/app-start-container/section/div[2]/travel-action-listing/div/div[2]/travel-action[1]/button";
     public static final String WEB_TICKET_LIST_ITEM = "/html/body/ui-view/root-content/router-outlet-wrapper/app-ticket-shop-main/div/div/div/div/timetable-container/div/div/timetable-connection[1]";
     public static final String WEB_TICKET_EINFACH_RAUS = "/html/body/ui-view/div/div/div/div/div/app-start-container/section/div[2]/travel-action-listing/div/div[2]/travel-action[1]/button/div";
-    public static final String WEB_TICKET_EINFACH_RAUS_PRICE = "/html/body/ui-view/root-content/router-outlet-wrapper/app-ticket-shop-main/div/div/relation-input-wrapper/relation-input/form/div/div[1]/conversion-button/div/div[2]/div/p[1]";
+    public static final String WEB_TICKET_EINFACH_RAUS_PRICE = "/html/body/ui-view/root-content/router-outlet-wrapper/app-ticket-shop-main/div/div/div/div/offer-state-wrapper/div/offers-container/offer-block[1]/div/div[4]/offer-price/div[1]/p";
+    public static final String WEB_TICKET_BOOKING_TIME_BUTTON = "/html/body/ui-view/div/div/div/div/relation-input-wrapper/relation-input/form/div/div[1]/relation-time/div/button[1]";
+    public static final String WEB_TICKET_BOOKING_ADD_PASSENGER_BUTTON = "/html/body/ui-view/root-content/router-outlet-wrapper/app-ticket-shop-main/div/div/relation-input-wrapper/relation-input/form/div/div[1]/div[4]/button";
+    public static final String WEB_TICKET_BOOKING_ADD_ADULT_BUTTON = "/html/body/ui-view/div/div/div/div/div/div[1]/base-passenger-component-component/main-passenger-screen/div/div[2]/button[1]";
+    public static final String WEB_TICKET_BOOKING_CONTINUE_ADD_ADULT_BUTTON = "/html/body/ui-view/div/div/div/page-header-wrapper/page-header/div/div[3]/button";
+    public static final String WEB_TICKET_BOOKING_RESULT_BUTTON = "/html/body/ui-view/root-content/router-outlet-wrapper/app-ticket-shop-main/div/div/div/div/timetable-container/div/div/timetable-connection[2]/div/div[1]";
+    public static final String WEB_TICKET_BOOKING_IN_WARENKORB_BUTTON = "/html/body/ui-view/root-content/router-outlet-wrapper/app-ticket-shop-main/div/div/relation-input-wrapper/relation-input/form/div/div[1]/conversion-button/div/div[2]/div/p[2]";
 }

@@ -4,5 +4,7 @@ Feature: Suche Zugverbindungen von Wien nach Salzburg
     Given Website ticket bookingpage
     When I search for a train
       | From | To |
-      | Wien | Salzburg |
-    Then there should be at least one result
+      | Wien | Wien Floridsdorf |
+    And I add a second adult person
+    And I click on a train connection
+    Then I should be able to put a ticket into the cart

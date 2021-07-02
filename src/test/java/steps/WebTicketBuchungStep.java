@@ -19,6 +19,7 @@ public class WebTicketBuchungStep {
 
     private static final String MAP_FROM_KEY = "From";
     private static final String MAP_TO_KEY = "To";
+    private static final String MAP_TIME_KEY = "Time";
 
     private WebDriver webDriver;
 
@@ -27,22 +28,6 @@ public class WebTicketBuchungStep {
     public void seleniumWebsite() throws Exception {
         this.webDriver = WebHook.getDriver();
         this.webDriver.get("https://tickets.oebb.at/de/ticket/travel");
-    }
-
-    @When("I choose location")
-    public void chooselocation(DataTable table) throws Exception {
-        List<Map<String, String>> rows = table.asMaps(String.class, String.class);
-        Map<String, String> columns = rows.get(0);
-        webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        var fromElem = this.webDriver.findElement(By.cssSelector("input[name='stationFrom']"));
-        fromElem.click();
-        fromElem.sendKeys(columns.get(MAP_FROM_KEY));
-        fromElem.sendKeys(Keys.ENTER);
-        var toElem = this.webDriver.findElement(By.cssSelector("input[name='stationTo']"));
-        toElem.click();
-        toElem.sendKeys(columns.get(MAP_TO_KEY));
-        webDriver.findElement(By.xpath(XPath.WEB_FIRST_DESTINATION_OPTION)).click();
-        webDriver.findElement(By.xpath(XPath.WEB_TICKET_SHOW_ALL)).click();
     }
 
     @When("I click on Einfach-Raus")
@@ -68,26 +53,33 @@ public class WebTicketBuchungStep {
         webDriver.findElement(By.xpath(XPath.WEB_TICKET_SHOW_ALL)).click();
     }
 
-    @Then("the Ticket price is")
-    public void ticketcosts() throws Exception {
-        var result = webDriver.findElements(By.xpath(XPath.WEB_TICKET_LIST_ITEM));
-        Assert.assertNotNull("Erwartet, dass mindestens ein ergebniss gefunden wird.", result);
+    @When("I add a second adult person")
+    public void addSecondAdultPerson() throws Exception {
+        webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        this.webDriver.findElement(By.xpath(XPath.WEB_TICKET_BOOKING_ADD_PASSENGER_BUTTON)).click();
+        this.webDriver.findElement(By.xpath(XPath.WEB_TICKET_BOOKING_ADD_ADULT_BUTTON)).click();
+        this.webDriver.findElement(By.xpath(XPath.WEB_TICKET_BOOKING_CONTINUE_ADD_ADULT_BUTTON)).click();
+    }
+
+    @When("I click on a train connection")
+    public void clickOnTrainConnection() throws Exception {
+        webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        this.webDriver.findElement(By.xpath(XPath.WEB_TICKET_BOOKING_RESULT_BUTTON)).click();
     }
 
     @Then("Ticket price should be {string}")
     public void ticketpriceShouldBe(String price) throws Exception {
-        var result = webDriver.findElements(By.xpath(XPath.WEB_TICKET_EINFACH_RAUS_PRICE));
+        var result = webDriver.findElement(By.xpath(XPath.WEB_TICKET_EINFACH_RAUS_PRICE)).getText();
         Assert.assertNotNull("Erwartet, dass mindestens ein ergebniss gefunden wird.", result);
         //todo: magic string?
         Assert.assertEquals("€ 35,00",result);
     }
 
-    @Then("there should be at least one result")
+    @Then("I should be able to put a ticket into the cart")
     public void thereShouldBeAtLeastOneResult() throws Exception {
-        //var result = webDriver.findElements(By.xpath(XPath.WEB_TICKET_EINFACH_RAUS_PRICE));
-        //Assert.assertNotNull("Erwartet, dass mindestens ein ergebniss gefunden wird.", result);
+        var result = webDriver.findElement(By.xpath(XPath.WEB_TICKET_BOOKING_IN_WARENKORB_BUTTON)).getText();
+        Assert.assertNotNull("Erwartet, dass mindestens ein ergebniss gefunden wird.", result);
         //todo: magic string?
-        Assert.assertTrue(true);
-        //Assert.assertEquals("€ 35,00",result);
+        Assert.assertEquals("in den\nWarenkorb",result);
     }
 }
