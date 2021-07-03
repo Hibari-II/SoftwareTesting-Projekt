@@ -52,8 +52,8 @@ public class TicketBuchungStep {
         clickOnTicket();
     }
 
-    @Then("Ticket kostet")
-    public void ticketKostet() {
+    @Then("erhalten Ticketpreis")
+    public void erhaltenTicketpreis() {
         var priceElement = driver.findElementById(Id.OFFER_PRICE);
         Assert.assertNotNull(priceElement);
         Assert.assertNotNull(priceElement.getText());
@@ -99,6 +99,4 @@ public class TicketBuchungStep {
     private void clickOnTicket() {
         driver.findElementByXPath(XPath.TICKET).click();
     }
-
-
 }

@@ -4,4 +4,4 @@ Feature: Gehe zu weiteren Angeboten und wähle ein Einfach-Raus-Ticket
     Given Android Applikation
     When weiteren Angeboten
     And Einfach Raus Ticket
-    Then Ticket kostet price "€ 35,00"
+    Then Ticket kostet price "€ 35.00"

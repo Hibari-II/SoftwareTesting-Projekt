@@ -5,4 +5,4 @@ Feature: Ticketbuchung von Wien nach Salzburg
     When Wähle
       | Von | Nach |
       | Wien | Salzburg |
-    Then Ticket kostet
+    Then erhalten Ticketpreis
